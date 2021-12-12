@@ -84,7 +84,7 @@ const QuoteContainer = (props) => {
   return (
     <section className='quote-section'>
       <header className='header-title'>
-        <h1>Choose your quote...</h1>
+        <h1>Get your random quote...</h1>
         <hr />
       </header>
       <div className='blockquote-box'>
