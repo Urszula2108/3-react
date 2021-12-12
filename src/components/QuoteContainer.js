@@ -20,6 +20,7 @@ const QuoteContainer = (props) => {
   }, []);
 
 
+  // fetching quotes from API
   const getQuotes = () => {
 
     axios.get('https://gist.githubusercontent.com/natebass/b0a548425a73bdf8ea5c618149fe1fce/raw/f4231cd5961f026264bb6bb3a6c41671b044f1f4/quotes.json', {
@@ -39,7 +40,9 @@ const QuoteContainer = (props) => {
   }
 
 
-
+  // Uwaga: W instrukcjach nie było opisane, że wyświetlane cytaty nie mogą się powtórzyć i że losowanie ma się kiedyś kończyć.
+  //Zakładam więc, że losujemy zawsze i cytaty mogą się powtórzyć.
+  // Next quote button
   const nextQuote = () => {
 
     let randomIndex = Math.floor(Math.random() * quotes.length);
@@ -52,7 +55,7 @@ const QuoteContainer = (props) => {
   }
 
 
-
+  // Previous quote button
   const prevQuote = () => {
 
     if (currentQuoteIndex === 1) {
@@ -64,6 +67,7 @@ const QuoteContainer = (props) => {
   }
 
 
+  // Display the quote on the page
   const randomQuote = randomQuotes[currentQuoteIndex]
 
   let quote = 'no quote'
